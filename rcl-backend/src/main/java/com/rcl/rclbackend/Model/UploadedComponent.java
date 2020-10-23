@@ -1,5 +1,6 @@
 package com.rcl.rclbackend.Model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -17,6 +18,7 @@ public class UploadedComponent {
 	private String componentName;
 	private String domain;
 	private String techType;
+	@Column(name = "component_function")
 	private String function;
 	private String description;
 	private boolean isPublic;

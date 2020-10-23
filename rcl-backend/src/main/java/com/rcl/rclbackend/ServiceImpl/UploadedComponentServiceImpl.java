@@ -6,6 +6,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import com.rcl.rclbackend.DTO.UploadedComponentDTO;
 import com.rcl.rclbackend.Model.UploadedComponent;
@@ -14,6 +15,7 @@ import com.rcl.rclbackend.Repository.UploadedComponentRepository;
 import com.rcl.rclbackend.Repository.UserRepository;
 import com.rcl.rclbackend.Service.UploadedComponentService;
 
+@Service
 public class UploadedComponentServiceImpl implements UploadedComponentService {
 
 	@Autowired
