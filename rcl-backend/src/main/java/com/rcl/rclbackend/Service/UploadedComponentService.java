@@ -12,4 +12,5 @@ public interface UploadedComponentService {
 	public UploadedComponent uploadPubliclyByUser(UploadedComponentDTO uploadedComponentDto) throws UsernameNotFoundException;
 	public List<UploadedComponent> getAllPublicComponent();
 	public List<UploadedComponent> getAllPrivateComponentByUser(String userName) throws UsernameNotFoundException;
+	public List<UploadedComponent> getAllPublicComponentByUser(String username);
 }

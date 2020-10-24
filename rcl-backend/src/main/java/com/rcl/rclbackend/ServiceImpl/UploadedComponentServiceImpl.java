@@ -58,8 +58,34 @@ public class UploadedComponentServiceImpl implements UploadedComponentService {
 	@Override
 	public UploadedComponent uploadPubliclyByUser(UploadedComponentDTO uploadedComponentDto)
 			throws UsernameNotFoundException {
-		// TODO Auto-generated method stub
-		return null;
+		UploadedComponent uploadedComponent = new UploadedComponent();
+		try {
+			// adding User
+			Optional<User> user = userRepo.findByUserName(uploadedComponentDto.getUserName());
+			//check user later
+			if(user.isPresent())
+				uploadedComponent.setUser(user.get());
+			else {
+				throw new UsernameNotFoundException(uploadedComponentDto.getUserName() + "Not Found!");
+			}
+			
+			uploadedComponent.setPreviewImg(uploadedComponentDto.getPreviewImg().getBytes());
+			uploadedComponent.setPreviewFile(uploadedComponentDto.getPreviewFile().getBytes());
+			uploadedComponent.setComponentFile(uploadedComponentDto.getComponentFile().getBytes());
+			uploadedComponent.setComponentName(uploadedComponentDto.getComponentName());
+			uploadedComponent.setDescription(uploadedComponentDto.getDescription());
+			uploadedComponent.setDomain(uploadedComponentDto.getDomain());
+			uploadedComponent.setFunction(uploadedComponentDto.getFunction());
+			uploadedComponent.setTechType(uploadedComponentDto.getTechType());
+			uploadedComponent.setPublic(true);
+			
+			UploadedComponent uploadedComponentToRet = uploadedComponentRepo.save(uploadedComponent);
+			return uploadedComponentToRet;
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return null;
+		}
 	}
 
 	@Override
@@ -75,7 +101,18 @@ public class UploadedComponentServiceImpl implements UploadedComponentService {
 			throw new UsernameNotFoundException(userName + "Not Found!");
 		}
 		// CHange to only Private
-		List<UploadedComponent> list = uploadedComponentRepo.findByUserUserName(userName);
+		List<UploadedComponent> list = uploadedComponentRepo.findPrivateComponentByUser(userName);
+		return list;
+	}
+
+	@Override
+	public List<UploadedComponent> getAllPublicComponentByUser(String userName) {
+		Optional<User> user = userRepo.findByUserName(userName);
+		if(user.isPresent()==false) {
+			throw new UsernameNotFoundException(userName + "Not Found!");
+		}
+		// CHange to only Private
+		List<UploadedComponent> list = uploadedComponentRepo.findPublicComponentByUser(userName);
 		return list;
 	}
 
