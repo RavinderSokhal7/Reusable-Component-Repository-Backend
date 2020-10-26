@@ -21,6 +21,10 @@ public class UploadedComponent {
 	@Column(name = "component_function")
 	private String function;
 	private String description;
+	private String componentOs;
+	private String componentVersion;
+	private String input;
+	private String output;
 	private boolean isPublic;
 	@Lob
 	private byte[] previewImg;
@@ -31,9 +35,10 @@ public class UploadedComponent {
 	@ManyToOne
 	private User user;
 	public UploadedComponent() {}
+	
 	public UploadedComponent(String componentId, String componentName, String domain, String techType, String function,
-			String description, boolean isPublic, byte[] previewImg, byte[] previewFile, byte[] componentFile,
-			User user) {
+			String description, String componentOs, String componentVersion, String input, String output,
+			boolean isPublic, byte[] previewImg, byte[] previewFile, byte[] componentFile, User user) {
 		super();
 		this.componentId = componentId;
 		this.componentName = componentName;
@@ -41,12 +46,17 @@ public class UploadedComponent {
 		this.techType = techType;
 		this.function = function;
 		this.description = description;
+		this.componentOs = componentOs;
+		this.componentVersion = componentVersion;
+		this.input = input;
+		this.output = output;
 		this.isPublic = isPublic;
 		this.previewImg = previewImg;
 		this.previewFile = previewFile;
 		this.componentFile = componentFile;
 		this.user = user;
 	}
+
 	public String getComponentId() {
 		return componentId;
 	}
@@ -112,6 +122,38 @@ public class UploadedComponent {
 	}
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	public String getComponentOs() {
+		return componentOs;
+	}
+
+	public void setComponentOs(String componentOs) {
+		this.componentOs = componentOs;
+	}
+
+	public String getComponentVersion() {
+		return componentVersion;
+	}
+
+	public void setComponentVersion(String componentVersion) {
+		this.componentVersion = componentVersion;
+	}
+
+	public String getInput() {
+		return input;
+	}
+
+	public void setInput(String input) {
+		this.input = input;
+	}
+
+	public String getOutput() {
+		return output;
+	}
+
+	public void setOutput(String output) {
+		this.output = output;
 	}
 	
 }

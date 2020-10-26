@@ -5,9 +5,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Example;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import com.rcl.rclbackend.DTO.FacetSearchDTO;
 import com.rcl.rclbackend.DTO.UploadedComponentDTO;
 import com.rcl.rclbackend.Model.UploadedComponent;
 import com.rcl.rclbackend.Model.User;
@@ -45,7 +47,13 @@ public class UploadedComponentServiceImpl implements UploadedComponentService {
 			uploadedComponent.setFunction(uploadedComponentDto.getFunction());
 			uploadedComponent.setTechType(uploadedComponentDto.getTechType());
 			uploadedComponent.setPublic(false);
-			
+			uploadedComponent.setOutput(uploadedComponentDto.getOutput());
+			uploadedComponent.setInput(uploadedComponentDto.getInput());
+			uploadedComponent.setComponentVersion(uploadedComponentDto.getComponentVersion());
+			uploadedComponent.setComponentOs(uploadedComponentDto.getComponentOs());
+			Example<UploadedComponent> example = Example.of(uploadedComponent);
+			if(uploadedComponentRepo.exists(example))
+				return null;
 			UploadedComponent uploadedComponentToRet = uploadedComponentRepo.save(uploadedComponent);
 			return uploadedComponentToRet;
 		} catch (IOException e) {
@@ -78,7 +86,13 @@ public class UploadedComponentServiceImpl implements UploadedComponentService {
 			uploadedComponent.setFunction(uploadedComponentDto.getFunction());
 			uploadedComponent.setTechType(uploadedComponentDto.getTechType());
 			uploadedComponent.setPublic(true);
-			
+			uploadedComponent.setOutput(uploadedComponentDto.getOutput());
+			uploadedComponent.setInput(uploadedComponentDto.getInput());
+			uploadedComponent.setComponentVersion(uploadedComponentDto.getComponentVersion());
+			uploadedComponent.setComponentOs(uploadedComponentDto.getComponentOs());
+			Example<UploadedComponent> example = Example.of(uploadedComponent);
+			if(uploadedComponentRepo.exists(example))
+				return null;
 			UploadedComponent uploadedComponentToRet = uploadedComponentRepo.save(uploadedComponent);
 			return uploadedComponentToRet;
 		} catch (IOException e) {
@@ -106,13 +120,53 @@ public class UploadedComponentServiceImpl implements UploadedComponentService {
 	}
 
 	@Override
-	public List<UploadedComponent> getAllPublicComponentByUser(String userName) {
+	public List<UploadedComponent> getAllPublicComponentByUser(String userName) throws UsernameNotFoundException {
 		Optional<User> user = userRepo.findByUserName(userName);
 		if(user.isPresent()==false) {
 			throw new UsernameNotFoundException(userName + "Not Found!");
 		}
-		// CHange to only Private
+		// CHange to only Public
 		List<UploadedComponent> list = uploadedComponentRepo.findPublicComponentByUser(userName);
+		return list;
+	}
+
+	@Override
+	public List<UploadedComponent> getAllPublicComponentByFacetAndAttributesByUser(FacetSearchDTO facetSearchDto)
+			throws UsernameNotFoundException {
+		Optional<User> user = userRepo.findByUserName(facetSearchDto.getUserName());
+		if(user.isPresent()==false) {
+			throw new UsernameNotFoundException(facetSearchDto.getUserName() + "Not Found!");
+		}
+		List<UploadedComponent> list = uploadedComponentRepo.findPublicComponentByFacetAndAttributesByUser(facetSearchDto.getUserName(),
+				facetSearchDto.getTechType(), 
+				facetSearchDto.getFunction(), 
+				facetSearchDto.getComponentOs(), 
+				facetSearchDto.getComponentVersion(), 
+				facetSearchDto.getInput(), 
+				facetSearchDto.getOutput(), 
+				facetSearchDto.getComponentName(), 
+				facetSearchDto.getDomain(), 
+				facetSearchDto.getDescription());
+		return list;
+	}
+
+	@Override
+	public List<UploadedComponent> getAllPrivateComponentByFacetAndAttributesByUser(FacetSearchDTO facetSearchDto)
+			throws UsernameNotFoundException {
+		Optional<User> user = userRepo.findByUserName(facetSearchDto.getUserName());
+		if(user.isPresent()==false) {
+			throw new UsernameNotFoundException(facetSearchDto.getUserName() + "Not Found!");
+		}
+		List<UploadedComponent> list = uploadedComponentRepo.findPublicComponentByFacetAndAttributesByUser(facetSearchDto.getUserName(),
+				facetSearchDto.getTechType(), 
+				facetSearchDto.getFunction(), 
+				facetSearchDto.getComponentOs(), 
+				facetSearchDto.getComponentVersion(), 
+				facetSearchDto.getInput(), 
+				facetSearchDto.getOutput(), 
+				facetSearchDto.getComponentName(), 
+				facetSearchDto.getDomain(), 
+				facetSearchDto.getDescription());
 		return list;
 	}
 

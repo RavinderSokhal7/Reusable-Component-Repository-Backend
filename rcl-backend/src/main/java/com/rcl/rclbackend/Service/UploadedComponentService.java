@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
+import com.rcl.rclbackend.DTO.FacetSearchDTO;
 import com.rcl.rclbackend.DTO.UploadedComponentDTO;
 import com.rcl.rclbackend.Model.UploadedComponent;
 
@@ -12,5 +13,7 @@ public interface UploadedComponentService {
 	public UploadedComponent uploadPubliclyByUser(UploadedComponentDTO uploadedComponentDto) throws UsernameNotFoundException;
 	public List<UploadedComponent> getAllPublicComponent();
 	public List<UploadedComponent> getAllPrivateComponentByUser(String userName) throws UsernameNotFoundException;
-	public List<UploadedComponent> getAllPublicComponentByUser(String username);
+	public List<UploadedComponent> getAllPublicComponentByUser(String username) throws UsernameNotFoundException;
+	public List<UploadedComponent> getAllPublicComponentByFacetAndAttributesByUser(FacetSearchDTO facetSearchDto) throws UsernameNotFoundException;
+	public List<UploadedComponent> getAllPrivateComponentByFacetAndAttributesByUser(FacetSearchDTO facetSearchDto) throws UsernameNotFoundException;
 }

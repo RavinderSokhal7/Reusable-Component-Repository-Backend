@@ -1,11 +1,6 @@
 package com.rcl.rclbackend.DTO;
 
-import org.springframework.web.multipart.MultipartFile;
-
-public class UploadedComponentDTO {
-	private MultipartFile previewImg;
-	private MultipartFile previewFile;
-	private MultipartFile componentFile;
+public class FacetSearchDTO {
 	private String userName;
 	private String componentName;
 	private String domain;
@@ -16,14 +11,10 @@ public class UploadedComponentDTO {
 	private String componentVersion;
 	private String input;
 	private String output;
-	public UploadedComponentDTO() {}
-	public UploadedComponentDTO(MultipartFile previewImg, MultipartFile previewFile, MultipartFile componentFile,
-			String userName, String componentName, String domain, String techType, String function, String description,
-			String componentOs, String componentVersion, String input, String output) {
+	public FacetSearchDTO() {}
+	public FacetSearchDTO(String userName, String componentName, String domain, String techType, String function,
+			String description, String componentOs, String componentVersion, String input, String output) {
 		super();
-		this.previewImg = previewImg;
-		this.previewFile = previewFile;
-		this.componentFile = componentFile;
 		this.userName = userName;
 		this.componentName = componentName;
 		this.domain = domain;
@@ -34,24 +25,6 @@ public class UploadedComponentDTO {
 		this.componentVersion = componentVersion;
 		this.input = input;
 		this.output = output;
-	}
-	public MultipartFile getPreviewImg() {
-		return previewImg;
-	}
-	public void setPreviewImg(MultipartFile previewImg) {
-		this.previewImg = previewImg;
-	}
-	public MultipartFile getPreviewFile() {
-		return previewFile;
-	}
-	public void setPreviewFile(MultipartFile previewFile) {
-		this.previewFile = previewFile;
-	}
-	public MultipartFile getComponentFile() {
-		return componentFile;
-	}
-	public void setComponentFile(MultipartFile componentFile) {
-		this.componentFile = componentFile;
 	}
 	public String getUserName() {
 		return userName;
@@ -113,4 +86,6 @@ public class UploadedComponentDTO {
 	public void setOutput(String output) {
 		this.output = output;
 	}
+	
+	
 }
