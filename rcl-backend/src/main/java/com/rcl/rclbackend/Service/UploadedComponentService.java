@@ -16,4 +16,7 @@ public interface UploadedComponentService {
 	public List<UploadedComponent> getAllPublicComponentByUser(String username) throws UsernameNotFoundException;
 	public List<UploadedComponent> getAllPublicComponentByFacetAndAttributesByUser(FacetSearchDTO facetSearchDto) throws UsernameNotFoundException;
 	public List<UploadedComponent> getAllPrivateComponentByFacetAndAttributesByUser(FacetSearchDTO facetSearchDto) throws UsernameNotFoundException;
+	public List<UploadedComponent> getAllPublicComponentByAttributesByUser(FacetSearchDTO facetSearchDto);
+	public List<UploadedComponent> getAllPrivateComponentByAttributesByUser(FacetSearchDTO facetSearchDto);
+	public List<UploadedComponent> getAllComponentByFacetAndAttributesByUser(FacetSearchDTO facetSearchDto);
 }

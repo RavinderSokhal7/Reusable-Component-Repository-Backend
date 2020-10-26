@@ -38,7 +38,7 @@ public class ComponentController {
 		while(st.hasMoreTokens()) {
 			int x = Integer.parseInt(st.nextToken());
 			if(f) {
-				rectifiedVersion.append(".");
+				sb.append(".");
 			}
 			f = true;
 			sb.append(x);
@@ -129,6 +129,7 @@ public class ComponentController {
 			Authentication auth){
 		componentVersion = rectifyVersion(componentVersion);
 		FacetSearchDTO facetSearchDto = new FacetSearchDTO();
+		facetSearchDto.setUserName(auth.getName());
 		facetSearchDto.setComponentName(componentName);
 		facetSearchDto.setComponentVersion(componentVersion);
 		facetSearchDto.setComponentOs(componentOs);
@@ -141,7 +142,7 @@ public class ComponentController {
 		List<UploadedComponent> ret = uploadedComponentService.getAllPublicComponentByFacetAndAttributesByUser(facetSearchDto);
 		return ret;
 	}
-	@GetMapping(value = "/download/component/facet/public")
+	@GetMapping(value = "/download/component/public/facet")
 	public List<UploadedComponent> getAllPublicComponentsByFacetByUser(@RequestParam("componentName") String componentName,
 			@RequestParam("domain") String domain,
 			@RequestParam("techType") String techType,
@@ -154,6 +155,33 @@ public class ComponentController {
 			Authentication auth){
 		componentVersion = rectifyVersion(componentVersion);
 		FacetSearchDTO facetSearchDto = new FacetSearchDTO();
+		facetSearchDto.setUserName(auth.getName());
+		facetSearchDto.setComponentName(componentName);
+		facetSearchDto.setComponentVersion(componentVersion);
+		facetSearchDto.setComponentOs(componentOs);
+		facetSearchDto.setDescription(description);
+		facetSearchDto.setDomain(domain);
+		facetSearchDto.setFunction(function);
+		facetSearchDto.setTechType(techType);
+		facetSearchDto.setInput(componentInput);
+		facetSearchDto.setOutput(componentOutput);
+		List<UploadedComponent> ret = uploadedComponentService.getAllPublicComponentByFacetAndAttributesByUser(facetSearchDto);
+		return ret;
+	}
+	@GetMapping(value = "/download/component/private/facet")
+	public List<UploadedComponent> getAllPrivateComponentsByFacetByUser(@RequestParam("componentName") String componentName,
+			@RequestParam("domain") String domain,
+			@RequestParam("techType") String techType,
+			@RequestParam("function") String function,
+			@RequestParam("description") String description,
+			@RequestParam("componentOs") String componentOs,
+			@RequestParam("componentVersion") String componentVersion,
+			@RequestParam("componentInput") String componentInput,
+			@RequestParam("componentOutput") String componentOutput,
+			Authentication auth){
+		componentVersion = rectifyVersion(componentVersion);
+		FacetSearchDTO facetSearchDto = new FacetSearchDTO();
+		facetSearchDto.setUserName(auth.getName());
 		facetSearchDto.setComponentName(componentName);
 		facetSearchDto.setComponentVersion(componentVersion);
 		facetSearchDto.setComponentOs(componentOs);
@@ -164,6 +192,58 @@ public class ComponentController {
 		facetSearchDto.setInput(componentInput);
 		facetSearchDto.setOutput(componentOutput);
 		List<UploadedComponent> ret = uploadedComponentService.getAllPrivateComponentByFacetAndAttributesByUser(facetSearchDto);
+		return ret;
+	}
+	@GetMapping(value = "/download/component/public/attribute")
+	public List<UploadedComponent> getAllPublicComponentsByAttributeAndOneFacetByUser(@RequestParam("componentName") String componentName,
+			@RequestParam("domain") String domain,
+			@RequestParam("techType") String techType,
+			@RequestParam("function") String function,
+			@RequestParam("description") String description,
+			@RequestParam("componentOs") String componentOs,
+			@RequestParam("componentVersion") String componentVersion,
+			@RequestParam("componentInput") String componentInput,
+			@RequestParam("componentOutput") String componentOutput,
+			Authentication auth){
+		componentVersion = rectifyVersion(componentVersion);
+		FacetSearchDTO facetSearchDto = new FacetSearchDTO();
+		facetSearchDto.setUserName(auth.getName());
+		facetSearchDto.setComponentName(componentName);
+		facetSearchDto.setComponentVersion(componentVersion);
+		facetSearchDto.setComponentOs(componentOs);
+		facetSearchDto.setDescription(description);
+		facetSearchDto.setDomain(domain);
+		facetSearchDto.setFunction(function);
+		facetSearchDto.setTechType(techType);
+		facetSearchDto.setInput(componentInput);
+		facetSearchDto.setOutput(componentOutput);
+		List<UploadedComponent> ret = uploadedComponentService.getAllPublicComponentByAttributesByUser(facetSearchDto);
+		return ret;
+	}
+	@GetMapping(value = "/download/component/private/attribute")
+	public List<UploadedComponent> getAllPrivateComponentsByAttributeAndOneFacetByUser(@RequestParam("componentName") String componentName,
+			@RequestParam("domain") String domain,
+			@RequestParam("techType") String techType,
+			@RequestParam("function") String function,
+			@RequestParam("description") String description,
+			@RequestParam("componentOs") String componentOs,
+			@RequestParam("componentVersion") String componentVersion,
+			@RequestParam("componentInput") String componentInput,
+			@RequestParam("componentOutput") String componentOutput,
+			Authentication auth){
+		componentVersion = rectifyVersion(componentVersion);
+		FacetSearchDTO facetSearchDto = new FacetSearchDTO();
+		facetSearchDto.setUserName(auth.getName());
+		facetSearchDto.setComponentName(componentName);
+		facetSearchDto.setComponentVersion(componentVersion);
+		facetSearchDto.setComponentOs(componentOs);
+		facetSearchDto.setDescription(description);
+		facetSearchDto.setDomain(domain);
+		facetSearchDto.setFunction(function);
+		facetSearchDto.setTechType(techType);
+		facetSearchDto.setInput(componentInput);
+		facetSearchDto.setOutput(componentOutput);
+		List<UploadedComponent> ret = uploadedComponentService.getAllPrivateComponentByAttributesByUser(facetSearchDto);
 		return ret;
 	}
 }

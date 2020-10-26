@@ -23,8 +23,8 @@ public class UploadedComponent {
 	private String description;
 	private String componentOs;
 	private String componentVersion;
-	private String input;
-	private String output;
+	private String componentInput;
+	private String componentOutput;
 	private boolean isPublic;
 	@Lob
 	private byte[] previewImg;
@@ -48,8 +48,8 @@ public class UploadedComponent {
 		this.description = description;
 		this.componentOs = componentOs;
 		this.componentVersion = componentVersion;
-		this.input = input;
-		this.output = output;
+		this.componentInput = input;
+		this.componentOutput = output;
 		this.isPublic = isPublic;
 		this.previewImg = previewImg;
 		this.previewFile = previewFile;
@@ -141,19 +141,19 @@ public class UploadedComponent {
 	}
 
 	public String getInput() {
-		return input;
+		return componentInput;
 	}
 
 	public void setInput(String input) {
-		this.input = input;
+		this.componentInput = input;
 	}
 
 	public String getOutput() {
-		return output;
+		return componentOutput;
 	}
 
 	public void setOutput(String output) {
-		this.output = output;
+		this.componentOutput = output;
 	}
 	
 }
