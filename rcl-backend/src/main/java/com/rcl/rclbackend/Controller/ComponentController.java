@@ -6,7 +6,6 @@ import java.util.StringTokenizer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,13 +17,10 @@ import com.rcl.rclbackend.DTO.UploadedComponentDTO;
 import com.rcl.rclbackend.Model.UploadedComponent;
 import com.rcl.rclbackend.Reponse.UploadComponentResponse;
 import com.rcl.rclbackend.Service.UploadedComponentService;
-import com.rcl.rclbackend.Service.UserService;
 
 @RestController
 @RequestMapping(value = "/api/rcl")
 public class ComponentController {
-	@Autowired
-	private UserService userService;
 	@Autowired
 	private UploadedComponentService uploadedComponentService;
 
