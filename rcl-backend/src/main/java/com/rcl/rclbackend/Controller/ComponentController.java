@@ -23,6 +23,7 @@ import com.rcl.rclbackend.Service.UploadedComponentService;
 public class ComponentController {
 	@Autowired
 	private UploadedComponentService uploadedComponentService;
+	private String notProvided = "#######################";
 
 	private String rectifyVersion(String componentVersion) {
 		if(componentVersion==null) return null;
@@ -152,6 +153,15 @@ public class ComponentController {
 		componentVersion = rectifyVersion(componentVersion);
 		FacetSearchDTO facetSearchDto = new FacetSearchDTO();
 		facetSearchDto.setUserName(auth.getName());
+		if(componentName.trim().equals("")) componentName = notProvided;
+		if(componentVersion.trim().equals("")) componentVersion = notProvided;
+		if(componentOs.trim().equals("")) componentOs = notProvided;
+		if(description.trim().equals("")) description = notProvided;
+		if(domain.trim().equals("")) domain = notProvided;
+		if(function.trim().equals("")) function = notProvided;
+		if(techType.trim().equals("")) techType = notProvided;
+		if(componentInput.trim().equals("")) componentInput = notProvided;
+		if(componentOutput.trim().equals("")) componentOutput = notProvided;
 		facetSearchDto.setComponentName(componentName);
 		facetSearchDto.setComponentVersion(componentVersion);
 		facetSearchDto.setComponentOs(componentOs);
@@ -178,6 +188,15 @@ public class ComponentController {
 		componentVersion = rectifyVersion(componentVersion);
 		FacetSearchDTO facetSearchDto = new FacetSearchDTO();
 		facetSearchDto.setUserName(auth.getName());
+		if(componentName.trim().equals("")) componentName = notProvided;
+		if(componentVersion.trim().equals("")) componentVersion = notProvided;
+		if(componentOs.trim().equals("")) componentOs = notProvided;
+		if(description.trim().equals("")) description = notProvided;
+		if(domain.trim().equals("")) domain = notProvided;
+		if(function.trim().equals("")) function = notProvided;
+		if(techType.trim().equals("")) techType = notProvided;
+		if(componentInput.trim().equals("")) componentInput = notProvided;
+		if(componentOutput.trim().equals("")) componentOutput = notProvided;
 		facetSearchDto.setComponentName(componentName);
 		facetSearchDto.setComponentVersion(componentVersion);
 		facetSearchDto.setComponentOs(componentOs);
@@ -204,6 +223,15 @@ public class ComponentController {
 		componentVersion = rectifyVersion(componentVersion);
 		FacetSearchDTO facetSearchDto = new FacetSearchDTO();
 		facetSearchDto.setUserName(auth.getName());
+		if(componentName.trim().equals("")) componentName = notProvided;
+		if(componentVersion.trim().equals("")) componentVersion = notProvided;
+		if(componentOs.trim().equals("")) componentOs = notProvided;
+		if(description.trim().equals("")) description = notProvided;
+		if(domain.trim().equals("")) domain = notProvided;
+		if(function.trim().equals("")) function = notProvided;
+		if(techType.trim().equals("")) techType = notProvided;
+		if(componentInput.trim().equals("")) componentInput = notProvided;
+		if(componentOutput.trim().equals("")) componentOutput = notProvided;
 		facetSearchDto.setComponentName(componentName);
 		facetSearchDto.setComponentVersion(componentVersion);
 		facetSearchDto.setComponentOs(componentOs);
@@ -229,6 +257,15 @@ public class ComponentController {
 			Authentication auth){
 		componentVersion = rectifyVersion(componentVersion);
 		FacetSearchDTO facetSearchDto = new FacetSearchDTO();
+		if(componentName.trim().equals("")) componentName = notProvided;
+		if(componentVersion.trim().equals("")) componentVersion = notProvided;
+		if(componentOs.trim().equals("")) componentOs = notProvided;
+		if(description.trim().equals("")) description = notProvided;
+		if(domain.trim().equals("")) domain = notProvided;
+		if(function.trim().equals("")) function = notProvided;
+		if(techType.trim().equals("")) techType = notProvided;
+		if(componentInput.trim().equals("")) componentInput = notProvided;
+		if(componentOutput.trim().equals("")) componentOutput = notProvided;
 		facetSearchDto.setUserName(auth.getName());
 		facetSearchDto.setComponentName(componentName);
 		facetSearchDto.setComponentVersion(componentVersion);
