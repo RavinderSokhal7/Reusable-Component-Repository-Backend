@@ -155,14 +155,14 @@ public class UploadedComponentServiceImpl implements UploadedComponentService {
 		}
 		List<UploadedComponent> list = uploadedComponentRepo.findPublicComponentByFacetAndAttributesByUser(
 				facetSearchDto.getTechType(), 
-				facetSearchDto.getFunction(), 
-				facetSearchDto.getComponentOs(), 
-				facetSearchDto.getComponentVersion(), 
-				facetSearchDto.getInput(), 
-				facetSearchDto.getOutput(), 
-				facetSearchDto.getComponentName(), 
-				facetSearchDto.getDomain(), 
-				facetSearchDto.getDescription());
+				facetSearchDto.getFunction()); 
+//				facetSearchDto.getComponentOs(), 
+//				facetSearchDto.getComponentVersion(), 
+//				facetSearchDto.getInput(), 
+//				facetSearchDto.getOutput(), 
+//				facetSearchDto.getComponentName(), 
+//				facetSearchDto.getDomain(), 
+//				facetSearchDto.getDescription());
 		return list;
 	}
 
@@ -175,14 +175,14 @@ public class UploadedComponentServiceImpl implements UploadedComponentService {
 		}
 		List<UploadedComponent> list = uploadedComponentRepo.findPrivateComponentByFacetAndAttributesByUser(facetSearchDto.getUserName(),
 				facetSearchDto.getTechType(), 
-				facetSearchDto.getFunction(), 
-				facetSearchDto.getComponentOs(), 
-				facetSearchDto.getComponentVersion(), 
-				facetSearchDto.getInput(), 
-				facetSearchDto.getOutput(), 
-				facetSearchDto.getComponentName(), 
-				facetSearchDto.getDomain(), 
-				facetSearchDto.getDescription());
+				facetSearchDto.getFunction());
+//				facetSearchDto.getComponentOs(), 
+//				facetSearchDto.getComponentVersion(), 
+//				facetSearchDto.getInput(), 
+//				facetSearchDto.getOutput(), 
+//				facetSearchDto.getComponentName(), 
+//				facetSearchDto.getDomain(), 
+//				facetSearchDto.getDescription());
 		return list;
 	}
 
@@ -232,14 +232,14 @@ public class UploadedComponentServiceImpl implements UploadedComponentService {
 		}
 		List<UploadedComponent> list = uploadedComponentRepo.findAllComponentByFacetAndAttributesByUser(facetSearchDto.getUserName(),
 				facetSearchDto.getTechType(), 
-				facetSearchDto.getFunction(), 
-				facetSearchDto.getComponentOs(), 
-				facetSearchDto.getComponentVersion(), 
-				facetSearchDto.getInput(), 
-				facetSearchDto.getOutput(), 
-				facetSearchDto.getComponentName(), 
-				facetSearchDto.getDomain(), 
-				facetSearchDto.getDescription());
+				facetSearchDto.getFunction()); 
+//				facetSearchDto.getComponentOs(), 
+//				facetSearchDto.getComponentVersion(), 
+//				facetSearchDto.getInput(), 
+//				facetSearchDto.getOutput(), 
+//				facetSearchDto.getComponentName(), 
+//				facetSearchDto.getDomain(), 
+//				facetSearchDto.getDescription());
 		return list;
 	}
 

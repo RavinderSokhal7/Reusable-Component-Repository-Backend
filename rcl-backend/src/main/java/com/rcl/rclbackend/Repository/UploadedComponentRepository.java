@@ -31,14 +31,14 @@ public interface UploadedComponentRepository extends JpaRepository<UploadedCompo
 //			+ "OR LOWER(t.description) LIKE LOWER(CONCAT('%',:description, '%')) )" )
 	public List<UploadedComponent> findPrivateComponentByFacetAndAttributesByUser(@Param("userName") String userName,
 			@Param("techType") String techType,
-			@Param("function") String function,
-			@Param("componentOs") String componentOs,
-			@Param("componentVersion") String componentVersion,
-			@Param("componentInput") String componentInput,
-			@Param("componentOutput") String componentOutput,
-			@Param("componentName") String componentName,
-			@Param("domain") String domain,
-			@Param("description") String description);
+			@Param("function") String function);
+//			@Param("componentOs") String componentOs,
+//			@Param("componentVersion") String componentVersion,
+//			@Param("componentInput") String componentInput,
+//			@Param("componentOutput") String componentOutput,
+//			@Param("componentName") String componentName,
+//			@Param("domain") String domain,
+//			@Param("description") String description);
 
 	@Query("SELECT t from UploadedComponent t WHERE "
 			+ "t.isPublic = true "
@@ -54,14 +54,14 @@ public interface UploadedComponentRepository extends JpaRepository<UploadedCompo
 //			+ "OR LOWER(t.description) LIKE LOWER(CONCAT('%',:description, '%')) )" )
 	public List<UploadedComponent> findPublicComponentByFacetAndAttributesByUser(
 			@Param("techType") String techType,
-			@Param("function") String function,
-			@Param("componentOs") String componentOs,
-			@Param("componentVersion") String componentVersion,
-			@Param("componentInput") String componentInput,
-			@Param("componentOutput") String componentOutput,
-			@Param("componentName") String componentName,
-			@Param("domain") String domain,
-			@Param("description") String description);
+			@Param("function") String function);
+		//	@Param("componentOs") String componentOs,
+		//	@Param("componentVersion") String componentVersion,
+		//	@Param("componentInput") String componentInput,
+		//	@Param("componentOutput") String componentOutput,
+		//	@Param("componentName") String componentName,
+		//	@Param("domain") String domain,
+		//	@Param("description") String description);
 	
 	@Query("SELECT t from UploadedComponent t WHERE "
 			+ "t.user.userName = :userName "
@@ -76,14 +76,14 @@ public interface UploadedComponentRepository extends JpaRepository<UploadedCompo
 //			+ "OR LOWER(t.description) LIKE LOWER(CONCAT('%',:description, '%')) )" )
 	public List<UploadedComponent> findAllComponentByFacetAndAttributesByUser(@Param("userName") String userName,
 			@Param("techType") String techType,
-			@Param("function") String function,
-			@Param("componentOs") String componentOs,
-			@Param("componentVersion") String componentVersion,
-			@Param("componentInput") String componentInput,
-			@Param("componentOutput") String componentOutput,
-			@Param("componentName") String componentName,
-			@Param("domain") String domain,
-			@Param("description") String description);
+			@Param("function") String function);
+		//	@Param("componentOs") String componentOs,
+		//	@Param("componentVersion") String componentVersion,
+		//	@Param("componentInput") String componentInput,
+		//	@Param("componentOutput") String componentOutput,
+		//	@Param("componentName") String componentName,
+		//	@Param("domain") String domain,
+		//	@Param("description") String description);	
 	
 	@Query("SELECT t from UploadedComponent t WHERE "
 			+ "t.user.userName = :userName "
