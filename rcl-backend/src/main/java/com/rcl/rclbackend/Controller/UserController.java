@@ -16,7 +16,7 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@PostMapping(value = "/admin/addUser")
+	@PostMapping(value = "/register/addUser")
 	public UserResponse addUser(@RequestBody User user) {
 		UserResponse response = new UserResponse();
 		Optional<User> op = userService.findUserByUserName(user.getUserName());
