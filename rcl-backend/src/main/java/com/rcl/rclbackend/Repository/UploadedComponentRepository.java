@@ -21,14 +21,14 @@ public interface UploadedComponentRepository extends JpaRepository<UploadedCompo
 	@Query("SELECT t from UploadedComponent t WHERE "+
 			"t.isPublic = false and t.user.userName = :userName "
 			+ "and LOWER(t.techType) LIKE LOWER(CONCAT('%',:techType, '%')) "
-			+ "and LOWER(t.function) LIKE LOWER(CONCAT('%',:function, '%')) "
-			+ "and ( LOWER(t.componentOs) LIKE LOWER(CONCAT('%',:componentOs, '%')) "
-			+ "OR LOWER(t.componentVersion) LIKE LOWER(CONCAT('%',:componentVersion, '%')) "
-			+ "OR LOWER(t.componentInput) LIKE LOWER(CONCAT('%',:componentInput, '%')) "
-			+ "OR LOWER(t.componentOutput) LIKE LOWER(CONCAT('%',:componentOutput, '%')) "
-			+ "OR LOWER(t.componentName) LIKE LOWER(CONCAT('%',:componentName, '%')) "
-			+ "OR LOWER(t.domain) LIKE LOWER(CONCAT('%',:domain, '%')) "
-			+ "OR LOWER(t.description) LIKE LOWER(CONCAT('%',:description, '%')) )" )
+			+ "and LOWER(t.function) LIKE LOWER(CONCAT('%',:function, '%')) ")
+//			+ "and ( LOWER(t.componentOs) LIKE LOWER(CONCAT('%',:componentOs, '%')) "
+//			+ "OR LOWER(t.componentVersion) LIKE LOWER(CONCAT('%',:componentVersion, '%')) "
+//			+ "OR LOWER(t.componentInput) LIKE LOWER(CONCAT('%',:componentInput, '%')) "
+//			+ "OR LOWER(t.componentOutput) LIKE LOWER(CONCAT('%',:componentOutput, '%')) "
+//			+ "OR LOWER(t.componentName) LIKE LOWER(CONCAT('%',:componentName, '%')) "
+//			+ "OR LOWER(t.domain) LIKE LOWER(CONCAT('%',:domain, '%')) "
+//			+ "OR LOWER(t.description) LIKE LOWER(CONCAT('%',:description, '%')) )" )
 	public List<UploadedComponent> findPrivateComponentByFacetAndAttributesByUser(@Param("userName") String userName,
 			@Param("techType") String techType,
 			@Param("function") String function,
@@ -44,14 +44,14 @@ public interface UploadedComponentRepository extends JpaRepository<UploadedCompo
 			+ "t.isPublic = true "
 //			+ "and t.user.userName = :userName "
 			+ "and LOWER(t.techType) LIKE LOWER(CONCAT('%',:techType, '%')) "
-			+ "and LOWER(t.function) LIKE LOWER(CONCAT('%',:function, '%')) "
-			+ "and ( LOWER(t.componentOs) LIKE LOWER(CONCAT('%',:componentOs, '%')) "
-			+ "OR LOWER(t.componentVersion) LIKE LOWER(CONCAT('%',:componentVersion, '%')) "
-			+ "OR LOWER(t.componentInput) LIKE LOWER(CONCAT('%',:componentInput, '%')) "
-			+ "OR LOWER(t.componentOutput) LIKE LOWER(CONCAT('%',:componentOutput, '%')) "
-			+ "OR LOWER(t.componentName) LIKE LOWER(CONCAT('%',:componentName, '%')) "
-			+ "OR LOWER(t.domain) LIKE LOWER(CONCAT('%',:domain, '%')) "
-			+ "OR LOWER(t.description) LIKE LOWER(CONCAT('%',:description, '%')) )" )
+			+ "and LOWER(t.function) LIKE LOWER(CONCAT('%',:function, '%')) ")
+//			+ "and ( LOWER(t.componentOs) LIKE LOWER(CONCAT('%',:componentOs, '%')) "
+//			+ "OR LOWER(t.componentVersion) LIKE LOWER(CONCAT('%',:componentVersion, '%')) "
+//			+ "OR LOWER(t.componentInput) LIKE LOWER(CONCAT('%',:componentInput, '%')) "
+//			+ "OR LOWER(t.componentOutput) LIKE LOWER(CONCAT('%',:componentOutput, '%')) "
+//			+ "OR LOWER(t.componentName) LIKE LOWER(CONCAT('%',:componentName, '%')) "
+//			+ "OR LOWER(t.domain) LIKE LOWER(CONCAT('%',:domain, '%')) "
+//			+ "OR LOWER(t.description) LIKE LOWER(CONCAT('%',:description, '%')) )" )
 	public List<UploadedComponent> findPublicComponentByFacetAndAttributesByUser(
 			@Param("techType") String techType,
 			@Param("function") String function,
@@ -66,14 +66,14 @@ public interface UploadedComponentRepository extends JpaRepository<UploadedCompo
 	@Query("SELECT t from UploadedComponent t WHERE "
 			+ "t.user.userName = :userName "
 			+ "and LOWER(t.techType) LIKE LOWER(CONCAT('%',:techType, '%')) "
-			+ "and LOWER(t.function) LIKE LOWER(CONCAT('%',:function, '%')) "
-			+ "and ( LOWER(t.componentOs) LIKE LOWER(CONCAT('%',:componentOs, '%')) "
-			+ "OR LOWER(t.componentVersion) LIKE LOWER(CONCAT('%',:componentVersion, '%')) "
-			+ "OR LOWER(t.componentInput) LIKE LOWER(CONCAT('%',:componentInput, '%')) "
-			+ "OR LOWER(t.componentOutput) LIKE LOWER(CONCAT('%',:componentOutput, '%')) "
-			+ "OR LOWER(t.componentName) LIKE LOWER(CONCAT('%',:componentName, '%')) "
-			+ "OR LOWER(t.domain) LIKE LOWER(CONCAT('%',:domain, '%')) "
-			+ "OR LOWER(t.description) LIKE LOWER(CONCAT('%',:description, '%')) )" )
+			+ "and LOWER(t.function) LIKE LOWER(CONCAT('%',:function, '%')) ")
+//			+ "and ( LOWER(t.componentOs) LIKE LOWER(CONCAT('%',:componentOs, '%')) "
+//			+ "OR LOWER(t.componentVersion) LIKE LOWER(CONCAT('%',:componentVersion, '%')) "
+//			+ "OR LOWER(t.componentInput) LIKE LOWER(CONCAT('%',:componentInput, '%')) "
+//			+ "OR LOWER(t.componentOutput) LIKE LOWER(CONCAT('%',:componentOutput, '%')) "
+//			+ "OR LOWER(t.componentName) LIKE LOWER(CONCAT('%',:componentName, '%')) "
+//			+ "OR LOWER(t.domain) LIKE LOWER(CONCAT('%',:domain, '%')) "
+//			+ "OR LOWER(t.description) LIKE LOWER(CONCAT('%',:description, '%')) )" )
 	public List<UploadedComponent> findAllComponentByFacetAndAttributesByUser(@Param("userName") String userName,
 			@Param("techType") String techType,
 			@Param("function") String function,
