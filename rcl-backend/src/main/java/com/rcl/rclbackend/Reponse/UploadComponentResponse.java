@@ -4,14 +4,24 @@ public class UploadComponentResponse {
 	private String message;
 	private String componentId;
 	private boolean uploadStatus;
+	private String downloadUri;
 	
 	public UploadComponentResponse() {}
-
-	public UploadComponentResponse(String message, String componentId, boolean uploadStatus) {
+	
+	public UploadComponentResponse(String message, String componentId, boolean uploadStatus, String downloadUri) {
 		super();
 		this.message = message;
 		this.componentId = componentId;
 		this.uploadStatus = uploadStatus;
+		this.downloadUri = downloadUri;
+	}
+
+	public String getDownloadUri() {
+		return downloadUri;
+	}
+
+	public void setDownloadUri(String downloadUri) {
+		this.downloadUri = downloadUri;
 	}
 
 	public String getMessage() {

@@ -57,6 +57,9 @@ public class UploadedComponentServiceImpl implements UploadedComponentService {
 			uploadedComponent.setPreviewImg(uploadedComponentDto.getPreviewImg().getBytes());
 			uploadedComponent.setPreviewFile(uploadedComponentDto.getPreviewFile().getBytes());
 			uploadedComponent.setComponentFile(uploadedComponentDto.getComponentFile().getBytes());
+			uploadedComponent.setPreviewFileType(uploadedComponentDto.getPreviewFile().getContentType());
+			uploadedComponent.setComponentFileType(uploadedComponentDto.getComponentFile().getContentType());
+			uploadedComponent.setPreviewImgType(uploadedComponentDto.getPreviewImg().getContentType());
 			uploadedComponent.setComponentName(uploadedComponentDto.getComponentName());
 			uploadedComponent.setDescription(uploadedComponentDto.getDescription());
 			UploadedComponent uploadedComponentToRet = uploadedComponentRepo.save(uploadedComponent);
@@ -101,6 +104,9 @@ public class UploadedComponentServiceImpl implements UploadedComponentService {
 			uploadedComponent.setPreviewImg(uploadedComponentDto.getPreviewImg().getBytes());
 			uploadedComponent.setPreviewFile(uploadedComponentDto.getPreviewFile().getBytes());
 			uploadedComponent.setComponentFile(uploadedComponentDto.getComponentFile().getBytes());
+			uploadedComponent.setPreviewFileType(uploadedComponentDto.getPreviewFile().getContentType());
+			uploadedComponent.setComponentFileType(uploadedComponentDto.getComponentFile().getContentType());
+			uploadedComponent.setPreviewImgType(uploadedComponentDto.getPreviewImg().getContentType());
 			uploadedComponent.setComponentName(uploadedComponentDto.getComponentName());
 			uploadedComponent.setDescription(uploadedComponentDto.getDescription());
 			UploadedComponent uploadedComponentToRet = uploadedComponentRepo.save(uploadedComponent);
@@ -235,6 +241,17 @@ public class UploadedComponentServiceImpl implements UploadedComponentService {
 				facetSearchDto.getDomain(), 
 				facetSearchDto.getDescription());
 		return list;
+	}
+
+	@Override
+	public UploadedComponent downloadComponentByIdByUser(String userName, String componentId)
+			throws UsernameNotFoundException {
+		Optional<User> user = userRepo.findByUserName(userName);
+		if(user.isPresent()==false) {
+			throw new UsernameNotFoundException(userName + "Not Found!");
+		}
+		UploadedComponent uploadedComponent = uploadedComponentRepo.downloadComponentByIdByUser(userName, componentId);
+		return uploadedComponent;
 	}
 
 }

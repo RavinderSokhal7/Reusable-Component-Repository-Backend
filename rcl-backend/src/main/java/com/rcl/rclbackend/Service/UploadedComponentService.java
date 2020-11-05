@@ -11,6 +11,7 @@ import com.rcl.rclbackend.Model.UploadedComponent;
 public interface UploadedComponentService {
 	public UploadedComponent uploadPrivatelyByUser(UploadedComponentDTO uploadedComponentDto) throws UsernameNotFoundException;
 	public UploadedComponent uploadPubliclyByUser(UploadedComponentDTO uploadedComponentDto) throws UsernameNotFoundException;
+	public UploadedComponent downloadComponentByIdByUser(String userName, String componentId) throws UsernameNotFoundException;
 	public List<UploadedComponent> getAllPublicComponent();
 	public List<UploadedComponent> getAllPrivateComponentByUser(String userName) throws UsernameNotFoundException;
 	public List<UploadedComponent> getAllPublicComponentByUser(String username) throws UsernameNotFoundException;

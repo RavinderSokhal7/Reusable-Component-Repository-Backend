@@ -151,4 +151,11 @@ public interface UploadedComponentRepository extends JpaRepository<UploadedCompo
 			@Param("componentName") String componentName,
 			@Param("domain") String domain,
 			@Param("description") String description);
+	
+	@Query("SELECT t from UploadedComponent t WHERE "
+			+ "(t.isPublic = true "
+			+ "OR t.user.userName = :userName) "
+			+ "and t.componentId = :componentId" )
+	public UploadedComponent downloadComponentByIdByUser(@Param("userName") String userName,
+			@Param("componentId") String componentId);
 }
