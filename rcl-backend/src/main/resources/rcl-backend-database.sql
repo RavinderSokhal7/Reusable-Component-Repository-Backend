@@ -108,7 +108,12 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (1,'dummy@mail.com','dummy',_binary '','dummy','$2a$10$4Tlxp3JUrl.sRkYNTfWytOAbKlNrX8dTrRq545exk/0yKcsau3Qra','USER','user'),(2,'dummy@mail.com','dummy',_binary '','dummy','$2a$10$EEBOyGZ2.4etsfG6Re0mm.5y0Yi3QEOcrQ5G7uuMeUOpIM5lT6.4i','ADMIN','admin'),(3,'dummy@mail.com','dummy',_binary '','dummy','$2a$10$e8fk6rnBBxDjX/5y9RyCVe1iOJlgBrx/eWdnwEc99cKjZ6FvuLCX2','USER','Ravi'),(4,'dummy@mail.com','dummy',_binary '','dummy','$2a$10$nKj6t3edzIhrjm6OmMk6GeR1vh8aaB5Zd.QWYDl0kQUDa0t1wingC','USER','test'),(5,'dummy@mail.com','dummy',_binary '','dummy','$2a$10$V7SAnF.r29P6tkH97YpSXejPfb/g1KhUTZB8PMgGNK2K7/RNcjYfW','USER','test 3'),(7,'dummy@mail.com','john',_binary '','doe','$2a$10$Hxgae8J8zw.xDooY6VZM9OTqrZXxvr9.Q6b/nKnOJ/5ULssLf5krW','USER','john');
+INSERT INTO `user` VALUES (1,'dummy@mail.com','dummy',true,'dummy','$2a$10$4Tlxp3JUrl.sRkYNTfWytOAbKlNrX8dTrRq545exk/0yKcsau3Qra','USER','user');
+INSERT INTO `user` VALUES (2,'dummy@mail.com','dummy',true,'dummy','$2a$10$EEBOyGZ2.4etsfG6Re0mm.5y0Yi3QEOcrQ5G7uuMeUOpIM5lT6.4i','ADMIN','admin');
+INSERT INTO `user` VALUES (3,'dummy@mail.com','dummy',true,'dummy','$2a$10$e8fk6rnBBxDjX/5y9RyCVe1iOJlgBrx/eWdnwEc99cKjZ6FvuLCX2','USER','Ravi');
+INSERT INTO `user` VALUES (4,'dummy@mail.com','dummy',true,'dummy','$2a$10$nKj6t3edzIhrjm6OmMk6GeR1vh8aaB5Zd.QWYDl0kQUDa0t1wingC','USER','test');
+INSERT INTO `user` VALUES (5,'dummy@mail.com','dummy',true,'dummy','$2a$10$V7SAnF.r29P6tkH97YpSXejPfb/g1KhUTZB8PMgGNK2K7/RNcjYfW','USER','test 3');
+INSERT INTO `user` VALUES (7,'dummy@mail.com','john',true,'doe','$2a$10$Hxgae8J8zw.xDooY6VZM9OTqrZXxvr9.Q6b/nKnOJ/5ULssLf5krW','USER','john');
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
