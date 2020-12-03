@@ -30,6 +30,7 @@ public class UploadedComponent {
 	private String componentFileType;
 	private String previewImgType;
 	private String previewFileType;
+	private String downloadUri;
 	private boolean isPublic;
 	@Lob
 	private byte[] previewImg;
@@ -64,6 +65,14 @@ public class UploadedComponent {
 		this.previewFile = previewFile;
 		this.componentFile = componentFile;
 		this.user = user;
+	}
+	
+	public String getDownloadUri() {
+		return downloadUri;
+	}
+
+	public void setDownloadUri(String downloadUri) {
+		this.downloadUri = downloadUri;
 	}
 
 	public String getComponentInput() {

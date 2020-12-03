@@ -120,8 +120,8 @@ public class UploadedComponentServiceImpl implements UploadedComponentService {
 
 	@Override
 	public List<UploadedComponent> getAllPublicComponent() {
-		// TODO Auto-generated method stub
-		return null;
+		List<UploadedComponent> list = uploadedComponentRepo.findAllPublicComponent();
+		return list;
 	}
 
 	@Override
@@ -253,5 +253,10 @@ public class UploadedComponentServiceImpl implements UploadedComponentService {
 		UploadedComponent uploadedComponent = uploadedComponentRepo.downloadComponentByIdByUser(userName, componentId);
 		return uploadedComponent;
 	}
-
+	
+	@Override
+	public UploadedComponent downloadComponentById(String componentId) {
+		UploadedComponent uploadedComponent = uploadedComponentRepo.downloadComponentById(componentId);
+		return uploadedComponent;
+	}
 }

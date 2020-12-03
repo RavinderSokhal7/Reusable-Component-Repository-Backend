@@ -20,4 +20,5 @@ public interface UploadedComponentService {
 	public List<UploadedComponent> getAllPublicComponentByAttributesByUser(FacetSearchDTO facetSearchDto);
 	public List<UploadedComponent> getAllPrivateComponentByAttributesByUser(FacetSearchDTO facetSearchDto);
 	public List<UploadedComponent> getAllComponentByFacetAndAttributesByUser(FacetSearchDTO facetSearchDto);
+	public UploadedComponent downloadComponentById(String componentId);
 }

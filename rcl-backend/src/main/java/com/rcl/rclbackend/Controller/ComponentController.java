@@ -128,12 +128,26 @@ public class ComponentController {
 	@GetMapping(value = "/download/component/private")
 	public List<UploadedComponent> getAllPrivateComponentsByUser(Authentication auth){
 		List<UploadedComponent> ret = uploadedComponentService.getAllPrivateComponentByUser(auth.getName());
+		for(UploadedComponent comp : ret) {
+			String downloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+					.path("/api/rcl/download/component/")
+					.path(comp.getComponentId())
+					.toUriString();
+			comp.setDownloadUri(downloadUri);
+		}
 		return ret;
 	}
 	@GetMapping(value = "/download/component/public")
 	public List<UploadedComponent> getAllPublicComponentsByUser(
 			Authentication auth){
 		List<UploadedComponent> ret = uploadedComponentService.getAllPublicComponentByUser(auth.getName());
+		for(UploadedComponent comp : ret) {
+			String downloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+					.path("/api/rcl/download/component/")
+					.path(comp.getComponentId())
+					.toUriString();
+			comp.setDownloadUri(downloadUri);
+		}
 		return ret;
 	}
 	@GetMapping(value = "/download/component/public/facet")
@@ -169,6 +183,13 @@ public class ComponentController {
 		facetSearchDto.setInput(componentInput);
 		facetSearchDto.setOutput(componentOutput);
 		List<UploadedComponent> ret = uploadedComponentService.getAllPublicComponentByFacetAndAttributesByUser(facetSearchDto);
+		for(UploadedComponent comp : ret) {
+			String downloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+					.path("/api/rcl/download/component/")
+					.path(comp.getComponentId())
+					.toUriString();
+			comp.setDownloadUri(downloadUri);
+		}
 		return ret;
 	}
 	@GetMapping(value = "/download/component/private/facet")
@@ -204,6 +225,13 @@ public class ComponentController {
 		facetSearchDto.setInput(componentInput);
 		facetSearchDto.setOutput(componentOutput);
 		List<UploadedComponent> ret = uploadedComponentService.getAllPrivateComponentByFacetAndAttributesByUser(facetSearchDto);
+		for(UploadedComponent comp : ret) {
+			String downloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+					.path("/api/rcl/download/component/")
+					.path(comp.getComponentId())
+					.toUriString();
+			comp.setDownloadUri(downloadUri);
+		}
 		return ret;
 	}
 	@GetMapping(value = "/download/component/public/attribute")
@@ -239,6 +267,13 @@ public class ComponentController {
 		facetSearchDto.setInput(componentInput);
 		facetSearchDto.setOutput(componentOutput);
 		List<UploadedComponent> ret = uploadedComponentService.getAllPublicComponentByAttributesByUser(facetSearchDto);
+		for(UploadedComponent comp : ret) {
+			String downloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+					.path("/api/rcl/download/component/")
+					.path(comp.getComponentId())
+					.toUriString();
+			comp.setDownloadUri(downloadUri);
+		}
 		return ret;
 	}
 	@GetMapping(value = "/download/component/private/attribute")
@@ -274,9 +309,16 @@ public class ComponentController {
 		facetSearchDto.setInput(componentInput);
 		facetSearchDto.setOutput(componentOutput);
 		List<UploadedComponent> ret = uploadedComponentService.getAllPrivateComponentByAttributesByUser(facetSearchDto);
+		for(UploadedComponent comp : ret) {
+			String downloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+					.path("/api/rcl/download/component/")
+					.path(comp.getComponentId())
+					.toUriString();
+			comp.setDownloadUri(downloadUri);
+		}
 		return ret;
 	}
-	@GetMapping(value = "/download/component/{componentId}")
+	@GetMapping(value = "/download/component/user/{componentId}")
 	public ResponseEntity<Resource> downloadComponentWithId(@PathVariable String componentId, Authentication auth){
 		UploadedComponent uploadedComponent = uploadedComponentService.downloadComponentByIdByUser(auth.getName(), componentId);		
 		if(uploadedComponent==null) {
@@ -286,5 +328,30 @@ public class ComponentController {
 				.contentType(MediaType.parseMediaType(uploadedComponent.getComponentFileType()))
 				.header(HttpHeaders.CONTENT_DISPOSITION, "attachments; filename = "+uploadedComponent.getComponentName())
 				.body(new ByteArrayResource(uploadedComponent.getComponentFile()));
+	}
+	
+	@GetMapping(value = "/download/component/{componentId}")
+	public ResponseEntity<Resource> downloadComponentWithId(@PathVariable String componentId){
+		UploadedComponent uploadedComponent = uploadedComponentService.downloadComponentById(componentId);		
+		if(uploadedComponent==null) {
+			return null;
+		}
+		return ResponseEntity.ok()
+				.contentType(MediaType.parseMediaType(uploadedComponent.getComponentFileType()))
+				.header(HttpHeaders.CONTENT_DISPOSITION, "attachments; filename = "+uploadedComponent.getComponentName())
+				.body(new ByteArrayResource(uploadedComponent.getComponentFile()));
+	}
+	
+	@GetMapping(value = "/download/component/public/all")
+	public List<UploadedComponent> getAllPublicComponents(){
+		List<UploadedComponent> ret = uploadedComponentService.getAllPublicComponent();
+		for(UploadedComponent comp : ret) {
+			String downloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+					.path("/api/rcl/download/component/")
+					.path(comp.getComponentId())
+					.toUriString();
+			comp.setDownloadUri(downloadUri);
+		}
+		return ret;
 	}
 }
