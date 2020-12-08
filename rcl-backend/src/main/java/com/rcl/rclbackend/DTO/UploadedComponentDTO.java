@@ -14,12 +14,19 @@ public class UploadedComponentDTO {
 	private String description;
 	private String componentOs;
 	private String componentVersion;
-	private String input;
-	private String output;
+	private String componentFileType;
+	private String previewImgType;
+	private String previewFileType;
+	private String downloadUri;
+	private String imgUrl;
+	private String componentInput;
+	private String componentOutput;
 	public UploadedComponentDTO() {}
+	
 	public UploadedComponentDTO(MultipartFile previewImg, MultipartFile previewFile, MultipartFile componentFile,
 			String userName, String componentName, String domain, String techType, String function, String description,
-			String componentOs, String componentVersion, String input, String output) {
+			String componentOs, String componentVersion, String componentFileType, String previewImgType,
+			String previewFileType, String downloadUri, String imgUrl, String input, String output) {
 		super();
 		this.previewImg = previewImg;
 		this.previewFile = previewFile;
@@ -32,9 +39,15 @@ public class UploadedComponentDTO {
 		this.description = description;
 		this.componentOs = componentOs;
 		this.componentVersion = componentVersion;
-		this.input = input;
-		this.output = output;
+		this.componentFileType = componentFileType;
+		this.previewImgType = previewImgType;
+		this.previewFileType = previewFileType;
+		this.downloadUri = downloadUri;
+		this.imgUrl = imgUrl;
+		this.componentInput = input;
+		this.componentOutput = output;
 	}
+
 	public MultipartFile getPreviewImg() {
 		return previewImg;
 	}
@@ -101,16 +114,62 @@ public class UploadedComponentDTO {
 	public void setComponentVersion(String componentVersion) {
 		this.componentVersion = componentVersion;
 	}
-	public String getInput() {
-		return input;
+	public String getComponentFileType() {
+		return componentFileType;
 	}
-	public void setInput(String input) {
-		this.input = input;
+	public void setComponentFileType(String componentFileType) {
+		this.componentFileType = componentFileType;
 	}
-	public String getOutput() {
-		return output;
+	public String getPreviewImgType() {
+		return previewImgType;
 	}
-	public void setOutput(String output) {
-		this.output = output;
+	public void setPreviewImgType(String previewImgType) {
+		this.previewImgType = previewImgType;
 	}
+	public String getPreviewFileType() {
+		return previewFileType;
+	}
+	public void setPreviewFileType(String previewFileType) {
+		this.previewFileType = previewFileType;
+	}
+	public String getDownloadUri() {
+		return downloadUri;
+	}
+	public void setDownloadUri(String downloadUri) {
+		this.downloadUri = downloadUri;
+	}
+	public String getImgUrl() {
+		return imgUrl;
+	}
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
+		
+	public String getComponentInput() {
+		return componentInput;
+	}
+
+	public void setComponentInput(String componentInput) {
+		this.componentInput = componentInput;
+	}
+
+	public String getComponentOutput() {
+		return componentOutput;
+	}
+
+	public void setComponentOutput(String componentOutput) {
+		this.componentOutput = componentOutput;
+	}
+
+	@Override
+	public String toString() {
+		return "UploadedComponentDTO [previewImg=" + previewImg + ", previewFile=" + previewFile + ", componentFile="
+				+ componentFile + ", userName=" + userName + ", componentName=" + componentName + ", domain=" + domain
+				+ ", techType=" + techType + ", function=" + function + ", description=" + description
+				+ ", componentOs=" + componentOs + ", componentVersion=" + componentVersion + ", componentFileType="
+				+ componentFileType + ", previewImgType=" + previewImgType + ", previewFileType=" + previewFileType
+				+ ", downloadUri=" + downloadUri + ", imgUrl=" + imgUrl + ", componentInput=" + componentInput
+				+ ", componentOutput=" + componentOutput + "]";
+	}
+	
 }

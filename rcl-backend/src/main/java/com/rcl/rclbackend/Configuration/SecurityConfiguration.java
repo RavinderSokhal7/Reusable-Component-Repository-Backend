@@ -1,6 +1,5 @@
 package com.rcl.rclbackend.Configuration;
 
-import javax.annotation.security.PermitAll;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
@@ -54,7 +53,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		httpSecurity.authorizeRequests()
 		.antMatchers("/admin/**").hasAuthority(RoleNames.ADMIN.name())
 		.antMatchers("/register/**").permitAll()
+		.antMatchers("/download/**").permitAll()
 		.antMatchers("/authenticate").permitAll()
+		.antMatchers("/api/rcl/download/component/public/all").permitAll()
+		.antMatchers("/api/rcl/static/component/**").permitAll()
+//		.antMatchers("/user/**").permitAll()
 		.anyRequest().authenticated()
 //		.and()
 //		.httpBasic()

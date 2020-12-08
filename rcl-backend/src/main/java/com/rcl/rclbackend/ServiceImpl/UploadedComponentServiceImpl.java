@@ -47,8 +47,8 @@ public class UploadedComponentServiceImpl implements UploadedComponentService {
 			uploadedComponent.setFunction(uploadedComponentDto.getFunction());
 			uploadedComponent.setTechType(uploadedComponentDto.getTechType());
 			uploadedComponent.setPublic(false);
-			uploadedComponent.setOutput(uploadedComponentDto.getOutput());
-			uploadedComponent.setInput(uploadedComponentDto.getInput());
+			uploadedComponent.setComponentOutput(uploadedComponentDto.getComponentOutput());
+			uploadedComponent.setComponentInput(uploadedComponentDto.getComponentInput());
 			uploadedComponent.setComponentVersion(uploadedComponentDto.getComponentVersion());
 			uploadedComponent.setComponentOs(uploadedComponentDto.getComponentOs());
 			Example<UploadedComponent> example = Example.of(uploadedComponent);
@@ -57,9 +57,9 @@ public class UploadedComponentServiceImpl implements UploadedComponentService {
 			uploadedComponent.setPreviewImg(uploadedComponentDto.getPreviewImg().getBytes());
 			uploadedComponent.setPreviewFile(uploadedComponentDto.getPreviewFile().getBytes());
 			uploadedComponent.setComponentFile(uploadedComponentDto.getComponentFile().getBytes());
-			uploadedComponent.setPreviewFileType(uploadedComponentDto.getPreviewFile().getContentType());
-			uploadedComponent.setComponentFileType(uploadedComponentDto.getComponentFile().getContentType());
-			uploadedComponent.setPreviewImgType(uploadedComponentDto.getPreviewImg().getContentType());
+			uploadedComponent.setPreviewFileType(uploadedComponentDto.getPreviewFileType());
+			uploadedComponent.setComponentFileType(uploadedComponentDto.getComponentFileType());
+			uploadedComponent.setPreviewImgType(uploadedComponentDto.getPreviewImgType());
 			uploadedComponent.setComponentName(uploadedComponentDto.getComponentName());
 			uploadedComponent.setDescription(uploadedComponentDto.getDescription());
 			UploadedComponent uploadedComponentToRet = uploadedComponentRepo.save(uploadedComponent);
@@ -94,8 +94,8 @@ public class UploadedComponentServiceImpl implements UploadedComponentService {
 			uploadedComponent.setFunction(uploadedComponentDto.getFunction());
 			uploadedComponent.setTechType(uploadedComponentDto.getTechType());
 			uploadedComponent.setPublic(true);
-			uploadedComponent.setOutput(uploadedComponentDto.getOutput());
-			uploadedComponent.setInput(uploadedComponentDto.getInput());
+			uploadedComponent.setComponentOutput(uploadedComponentDto.getComponentOutput());
+			uploadedComponent.setComponentInput(uploadedComponentDto.getComponentInput());
 			uploadedComponent.setComponentVersion(uploadedComponentDto.getComponentVersion());
 			uploadedComponent.setComponentOs(uploadedComponentDto.getComponentOs());
 			Example<UploadedComponent> example = Example.of(uploadedComponent);
@@ -104,9 +104,9 @@ public class UploadedComponentServiceImpl implements UploadedComponentService {
 			uploadedComponent.setPreviewImg(uploadedComponentDto.getPreviewImg().getBytes());
 			uploadedComponent.setPreviewFile(uploadedComponentDto.getPreviewFile().getBytes());
 			uploadedComponent.setComponentFile(uploadedComponentDto.getComponentFile().getBytes());
-			uploadedComponent.setPreviewFileType(uploadedComponentDto.getPreviewFile().getContentType());
-			uploadedComponent.setComponentFileType(uploadedComponentDto.getComponentFile().getContentType());
-			uploadedComponent.setPreviewImgType(uploadedComponentDto.getPreviewImg().getContentType());
+			uploadedComponent.setPreviewFileType(uploadedComponentDto.getPreviewFileType());
+			uploadedComponent.setComponentFileType(uploadedComponentDto.getComponentFileType());
+			uploadedComponent.setPreviewImgType(uploadedComponentDto.getPreviewImgType());
 			uploadedComponent.setComponentName(uploadedComponentDto.getComponentName());
 			uploadedComponent.setDescription(uploadedComponentDto.getDescription());
 			UploadedComponent uploadedComponentToRet = uploadedComponentRepo.save(uploadedComponent);

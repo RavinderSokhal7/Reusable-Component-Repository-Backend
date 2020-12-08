@@ -31,6 +31,7 @@ public class UploadedComponent {
 	private String previewImgType;
 	private String previewFileType;
 	private String downloadUri;
+	private String imgUrl;
 	private boolean isPublic;
 	@Lob
 	private byte[] previewImg;
@@ -41,11 +42,13 @@ public class UploadedComponent {
 	@ManyToOne
 	private User user;
 	public UploadedComponent() {}
-
+	
+	
 	public UploadedComponent(String componentId, String componentName, String domain, String techType, String function,
 			String description, String componentOs, String componentVersion, String componentInput,
 			String componentOutput, String componentFileType, String previewImgType, String previewFileType,
-			boolean isPublic, byte[] previewImg, byte[] previewFile, byte[] componentFile, User user) {
+			String downloadUri, String imgUrl, boolean isPublic, byte[] previewImg, byte[] previewFile,
+			byte[] componentFile, User user) {
 		super();
 		this.componentId = componentId;
 		this.componentName = componentName;
@@ -60,60 +63,15 @@ public class UploadedComponent {
 		this.componentFileType = componentFileType;
 		this.previewImgType = previewImgType;
 		this.previewFileType = previewFileType;
+		this.downloadUri = downloadUri;
+		this.imgUrl = imgUrl;
 		this.isPublic = isPublic;
 		this.previewImg = previewImg;
 		this.previewFile = previewFile;
 		this.componentFile = componentFile;
 		this.user = user;
 	}
-	
-	public String getDownloadUri() {
-		return downloadUri;
-	}
 
-	public void setDownloadUri(String downloadUri) {
-		this.downloadUri = downloadUri;
-	}
-
-	public String getComponentInput() {
-		return componentInput;
-	}
-
-	public void setComponentInput(String componentInput) {
-		this.componentInput = componentInput;
-	}
-
-	public String getComponentOutput() {
-		return componentOutput;
-	}
-
-	public void setComponentOutput(String componentOutput) {
-		this.componentOutput = componentOutput;
-	}
-
-	public String getComponentFileType() {
-		return componentFileType;
-	}
-
-	public void setComponentFileType(String componentFileType) {
-		this.componentFileType = componentFileType;
-	}
-
-	public String getPreviewImgType() {
-		return previewImgType;
-	}
-
-	public void setPreviewImgType(String previewImgType) {
-		this.previewImgType = previewImgType;
-	}
-
-	public String getPreviewFileType() {
-		return previewFileType;
-	}
-
-	public void setPreviewFileType(String previewFileType) {
-		this.previewFileType = previewFileType;
-	}
 
 	public String getComponentId() {
 		return componentId;
@@ -151,6 +109,60 @@ public class UploadedComponent {
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	public String getComponentOs() {
+		return componentOs;
+	}
+	public void setComponentOs(String componentOs) {
+		this.componentOs = componentOs;
+	}
+	public String getComponentVersion() {
+		return componentVersion;
+	}
+	public void setComponentVersion(String componentVersion) {
+		this.componentVersion = componentVersion;
+	}
+	public String getComponentInput() {
+		return componentInput;
+	}
+	public void setComponentInput(String componentInput) {
+		this.componentInput = componentInput;
+	}
+	public String getComponentOutput() {
+		return componentOutput;
+	}
+	public void setComponentOutput(String componentOutput) {
+		this.componentOutput = componentOutput;
+	}
+	public String getComponentFileType() {
+		return componentFileType;
+	}
+	public void setComponentFileType(String componentFileType) {
+		this.componentFileType = componentFileType;
+	}
+	public String getPreviewImgType() {
+		return previewImgType;
+	}
+	public void setPreviewImgType(String previewImgType) {
+		this.previewImgType = previewImgType;
+	}
+	public String getPreviewFileType() {
+		return previewFileType;
+	}
+	public void setPreviewFileType(String previewFileType) {
+		this.previewFileType = previewFileType;
+	}
+	public String getDownloadUri() {
+		return downloadUri;
+	}
+	public void setDownloadUri(String downloadUri) {
+		this.downloadUri = downloadUri;
+	}
+	public String getImgUrl() {
+		return imgUrl;
+	}
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
 	public boolean isPublic() {
 		return isPublic;
 	}
@@ -181,48 +193,17 @@ public class UploadedComponent {
 	public void setUser(User user) {
 		this.user = user;
 	}
-
-	public String getComponentOs() {
-		return componentOs;
-	}
-
-	public void setComponentOs(String componentOs) {
-		this.componentOs = componentOs;
-	}
-
-	public String getComponentVersion() {
-		return componentVersion;
-	}
-
-	public void setComponentVersion(String componentVersion) {
-		this.componentVersion = componentVersion;
-	}
-
-	public String getInput() {
-		return componentInput;
-	}
-
-	public void setInput(String input) {
-		this.componentInput = input;
-	}
-
-	public String getOutput() {
-		return componentOutput;
-	}
-
-	public void setOutput(String output) {
-		this.componentOutput = output;
-	}
-
 	@Override
 	public String toString() {
 		return "UploadedComponent [componentId=" + componentId + ", componentName=" + componentName + ", domain="
 				+ domain + ", techType=" + techType + ", function=" + function + ", description=" + description
 				+ ", componentOs=" + componentOs + ", componentVersion=" + componentVersion + ", componentInput="
 				+ componentInput + ", componentOutput=" + componentOutput + ", componentFileType=" + componentFileType
-				+ ", previewImgType=" + previewImgType + ", previewFileType=" + previewFileType + ", isPublic="
-				+ isPublic + ", user=" + user
-				+ "]";
+				+ ", previewImgType=" + previewImgType + ", previewFileType=" + previewFileType + ", downloadUri="
+				+ downloadUri + ", imgUrl=" + imgUrl + ", isPublic=" + isPublic + ", previewImg="
+				+ Arrays.toString(previewImg) + ", previewFile=" + Arrays.toString(previewFile) + ", componentFile="
+				+ Arrays.toString(componentFile) + ", user=" + user + "]";
 	}
+	
 	
 }

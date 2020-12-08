@@ -32,6 +32,21 @@ public class ComponentController {
 	private UploadedComponentService uploadedComponentService;
 	private String notProvided = "#######################";
 
+	private String getImageUrl(String compId) {
+		String imgUrl = ServletUriComponentsBuilder.fromCurrentContextPath()
+				.path("/download/image/")
+				.path(compId)
+				.toUriString();
+		return imgUrl;
+	}
+	private String getDownloadUri(String compId) {
+		String imgUrl = ServletUriComponentsBuilder.fromCurrentContextPath()
+				.path("/download/component/")
+				.path(compId)
+				.toUriString();
+		return imgUrl;
+	}
+	
 	private String rectifyVersion(String componentVersion) {
 		if(componentVersion==null) return null;
 		componentVersion.trim();
@@ -70,8 +85,8 @@ public class ComponentController {
 			) {
 		componentVersion = rectifyVersion(componentVersion);
 		UploadComponentResponse response = new UploadComponentResponse();
-		UploadedComponentDTO compDto = new UploadedComponentDTO(previewImg, previewFile, componentFile, auth.getName(),
-				componentName, domain, techType, function, description, componentOs, componentVersion, componentInput, componentOutput);
+		UploadedComponentDTO compDto = new UploadedComponentDTO(previewImg, previewFile, componentFile, auth.getName(), componentName, domain, techType, function, description, componentOs, componentVersion,
+				componentFile.getContentType(), previewFile.getContentType(), previewFile.getContentType(), "", "", componentInput, componentOutput);
 		UploadedComponent comp = uploadedComponentService.uploadPrivatelyByUser(compDto);
 		if(comp == null) {
 			response.setMessage("Component already exits!");
@@ -83,6 +98,11 @@ public class ComponentController {
 					.path(comp.getComponentId())
 					.toUriString();
 			response.setDownloadUri(downloadUri);
+			String imgUrl = ServletUriComponentsBuilder.fromCurrentContextPath()
+					.path("/api/rcl/download/component/")
+					.path(comp.getComponentId())
+					.toUriString();
+			comp.setImgUrl(imgUrl);
 			response.setComponentId(comp.getComponentId());
 			response.setMessage(componentName + " Successfully Uploaded");
 			response.setUploadStatus(true);
@@ -106,19 +126,18 @@ public class ComponentController {
 			) {
 		componentVersion = rectifyVersion(componentVersion);
 		UploadComponentResponse response = new UploadComponentResponse();
-		UploadedComponentDTO compDto = new UploadedComponentDTO(previewImg, previewFile, componentFile, auth.getName(),
-				componentName, domain, techType, function, description, componentOs, componentVersion, componentInput, componentOutput);
+		UploadedComponentDTO compDto = new UploadedComponentDTO(previewImg, previewFile, componentFile, auth.getName(), componentName, domain, techType, function, description, componentOs, componentVersion,
+				componentFile.getContentType(), previewFile.getContentType(), previewFile.getContentType(), "", "", componentInput, componentOutput);
 		UploadedComponent comp = uploadedComponentService.uploadPubliclyByUser(compDto);
 		if(comp == null) {
 			response.setMessage("Component already exits!");
 			response.setUploadStatus(false);
 		}
 		else {
-			String downloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-					.path("/api/rcl/download/component/")
-					.path(comp.getComponentId())
-					.toUriString();
+			String downloadUri = getDownloadUri(comp.getComponentId());			
 			response.setDownloadUri(downloadUri);
+			String imgUrl = getImageUrl(comp.getComponentId());
+			comp.setImgUrl(imgUrl);
 			response.setComponentId(comp.getComponentId());
 			response.setMessage(componentName + " Successfully Uploaded");
 			response.setUploadStatus(true);
@@ -129,11 +148,8 @@ public class ComponentController {
 	public List<UploadedComponent> getAllPrivateComponentsByUser(Authentication auth){
 		List<UploadedComponent> ret = uploadedComponentService.getAllPrivateComponentByUser(auth.getName());
 		for(UploadedComponent comp : ret) {
-			String downloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-					.path("/api/rcl/download/component/")
-					.path(comp.getComponentId())
-					.toUriString();
-			comp.setDownloadUri(downloadUri);
+			comp.setDownloadUri(getDownloadUri(comp.getComponentId()));			
+			comp.setImgUrl(getImageUrl(comp.getComponentId()));
 		}
 		return ret;
 	}
@@ -142,11 +158,8 @@ public class ComponentController {
 			Authentication auth){
 		List<UploadedComponent> ret = uploadedComponentService.getAllPublicComponentByUser(auth.getName());
 		for(UploadedComponent comp : ret) {
-			String downloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-					.path("/api/rcl/download/component/")
-					.path(comp.getComponentId())
-					.toUriString();
-			comp.setDownloadUri(downloadUri);
+			comp.setDownloadUri(getDownloadUri(comp.getComponentId()));			
+			comp.setImgUrl(getImageUrl(comp.getComponentId()));
 		}
 		return ret;
 	}
@@ -184,11 +197,8 @@ public class ComponentController {
 		facetSearchDto.setOutput(componentOutput);
 		List<UploadedComponent> ret = uploadedComponentService.getAllPublicComponentByFacetAndAttributesByUser(facetSearchDto);
 		for(UploadedComponent comp : ret) {
-			String downloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-					.path("/api/rcl/download/component/")
-					.path(comp.getComponentId())
-					.toUriString();
-			comp.setDownloadUri(downloadUri);
+			comp.setDownloadUri(getDownloadUri(comp.getComponentId()));			
+			comp.setImgUrl(getImageUrl(comp.getComponentId()));
 		}
 		return ret;
 	}
@@ -226,11 +236,8 @@ public class ComponentController {
 		facetSearchDto.setOutput(componentOutput);
 		List<UploadedComponent> ret = uploadedComponentService.getAllPrivateComponentByFacetAndAttributesByUser(facetSearchDto);
 		for(UploadedComponent comp : ret) {
-			String downloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-					.path("/api/rcl/download/component/")
-					.path(comp.getComponentId())
-					.toUriString();
-			comp.setDownloadUri(downloadUri);
+			comp.setDownloadUri(getDownloadUri(comp.getComponentId()));			
+			comp.setImgUrl(getImageUrl(comp.getComponentId()));
 		}
 		return ret;
 	}
@@ -268,11 +275,8 @@ public class ComponentController {
 		facetSearchDto.setOutput(componentOutput);
 		List<UploadedComponent> ret = uploadedComponentService.getAllPublicComponentByAttributesByUser(facetSearchDto);
 		for(UploadedComponent comp : ret) {
-			String downloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-					.path("/api/rcl/download/component/")
-					.path(comp.getComponentId())
-					.toUriString();
-			comp.setDownloadUri(downloadUri);
+			comp.setDownloadUri(getDownloadUri(comp.getComponentId()));			
+			comp.setImgUrl(getImageUrl(comp.getComponentId()));
 		}
 		return ret;
 	}
@@ -310,29 +314,14 @@ public class ComponentController {
 		facetSearchDto.setOutput(componentOutput);
 		List<UploadedComponent> ret = uploadedComponentService.getAllPrivateComponentByAttributesByUser(facetSearchDto);
 		for(UploadedComponent comp : ret) {
-			String downloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-					.path("/api/rcl/download/component/")
-					.path(comp.getComponentId())
-					.toUriString();
-			comp.setDownloadUri(downloadUri);
+			comp.setDownloadUri(getDownloadUri(comp.getComponentId()));			
+			comp.setImgUrl(getImageUrl(comp.getComponentId()));
 		}
 		return ret;
 	}
 	@GetMapping(value = "/download/component/user/{componentId}")
-	public ResponseEntity<Resource> downloadComponentWithId(@PathVariable String componentId, Authentication auth){
+	public ResponseEntity<Resource> downloadComponentWithIdAndUser(@PathVariable String componentId, Authentication auth){
 		UploadedComponent uploadedComponent = uploadedComponentService.downloadComponentByIdByUser(auth.getName(), componentId);		
-		if(uploadedComponent==null) {
-			return null;
-		}
-		return ResponseEntity.ok()
-				.contentType(MediaType.parseMediaType(uploadedComponent.getComponentFileType()))
-				.header(HttpHeaders.CONTENT_DISPOSITION, "attachments; filename = "+uploadedComponent.getComponentName())
-				.body(new ByteArrayResource(uploadedComponent.getComponentFile()));
-	}
-	
-	@GetMapping(value = "/download/component/{componentId}")
-	public ResponseEntity<Resource> downloadComponentWithId(@PathVariable String componentId){
-		UploadedComponent uploadedComponent = uploadedComponentService.downloadComponentById(componentId);		
 		if(uploadedComponent==null) {
 			return null;
 		}
@@ -346,12 +335,17 @@ public class ComponentController {
 	public List<UploadedComponent> getAllPublicComponents(){
 		List<UploadedComponent> ret = uploadedComponentService.getAllPublicComponent();
 		for(UploadedComponent comp : ret) {
-			String downloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-					.path("/api/rcl/download/component/")
-					.path(comp.getComponentId())
-					.toUriString();
-			comp.setDownloadUri(downloadUri);
+			comp.setDownloadUri(getDownloadUri(comp.getComponentId()));			
+			comp.setImgUrl(getImageUrl(comp.getComponentId()));
 		}
 		return ret;
+	}
+	
+	@GetMapping(value = "/static/component/{componentId}")
+	public UploadedComponent getComponentById(@PathVariable String componentId) {
+		UploadedComponent uploadedComponent = uploadedComponentService.downloadComponentById(componentId);
+		uploadedComponent.setImgUrl(getImageUrl(componentId));
+		uploadedComponent.setDownloadUri(getDownloadUri(componentId));
+		return uploadedComponent;
 	}
 }
