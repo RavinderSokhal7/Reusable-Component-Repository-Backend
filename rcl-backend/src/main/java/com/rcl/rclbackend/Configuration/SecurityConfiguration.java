@@ -58,7 +58,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 		.antMatchers("/api/rcl/download/component/public/all").permitAll()
 		.antMatchers("/api/rcl/static/component/**").permitAll()
 //		.antMatchers("/user/**").permitAll()
-		.anyRequest().authenticated()
+		.anyRequest().permitAll()//authenticated()
 //		.and()
 //		.httpBasic()
 //		.and()

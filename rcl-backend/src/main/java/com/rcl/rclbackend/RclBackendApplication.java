@@ -24,7 +24,8 @@ public class RclBackendApplication {
 				.allowedOrigins("http://localhost:3000")
 				.allowedHeaders("*")
 				.allowedMethods("*")
-				.allowCredentials(true);
+				.allowCredentials(true)
+				.exposedHeaders("Content-Disposition");
 			}
 		};
 	}

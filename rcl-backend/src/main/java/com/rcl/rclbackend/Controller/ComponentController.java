@@ -10,6 +10,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -27,6 +28,7 @@ import com.rcl.rclbackend.Service.UploadedComponentService;
 
 @RestController
 @RequestMapping(value = "/api/rcl")
+@CrossOrigin(value = {"*"}, exposedHeaders = {"Content-Disposition"})
 public class ComponentController {
 	@Autowired
 	private UploadedComponentService uploadedComponentService;
@@ -86,22 +88,16 @@ public class ComponentController {
 		componentVersion = rectifyVersion(componentVersion);
 		UploadComponentResponse response = new UploadComponentResponse();
 		UploadedComponentDTO compDto = new UploadedComponentDTO(previewImg, previewFile, componentFile, auth.getName(), componentName, domain, techType, function, description, componentOs, componentVersion,
-				componentFile.getContentType(), previewFile.getContentType(), previewFile.getContentType(), "", "", componentInput, componentOutput);
+				componentFile.getContentType(), previewImg.getContentType(), previewFile.getContentType(), "", "", componentInput, componentOutput);
 		UploadedComponent comp = uploadedComponentService.uploadPrivatelyByUser(compDto);
 		if(comp == null) {
 			response.setMessage("Component already exits!");
 			response.setUploadStatus(false);
 		}
 		else {
-			String downloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-					.path("/api/rcl/download/component/")
-					.path(comp.getComponentId())
-					.toUriString();
+			String downloadUri =getDownloadUri(comp.getComponentId());
 			response.setDownloadUri(downloadUri);
-			String imgUrl = ServletUriComponentsBuilder.fromCurrentContextPath()
-					.path("/api/rcl/download/component/")
-					.path(comp.getComponentId())
-					.toUriString();
+			String imgUrl = getImageUrl(comp.getComponentId());
 			comp.setImgUrl(imgUrl);
 			response.setComponentId(comp.getComponentId());
 			response.setMessage(componentName + " Successfully Uploaded");
@@ -127,7 +123,7 @@ public class ComponentController {
 		componentVersion = rectifyVersion(componentVersion);
 		UploadComponentResponse response = new UploadComponentResponse();
 		UploadedComponentDTO compDto = new UploadedComponentDTO(previewImg, previewFile, componentFile, auth.getName(), componentName, domain, techType, function, description, componentOs, componentVersion,
-				componentFile.getContentType(), previewFile.getContentType(), previewFile.getContentType(), "", "", componentInput, componentOutput);
+				componentFile.getContentType(), previewImg.getContentType(), previewFile.getContentType(), "", "", componentInput, componentOutput);
 		UploadedComponent comp = uploadedComponentService.uploadPubliclyByUser(compDto);
 		if(comp == null) {
 			response.setMessage("Component already exits!");
@@ -327,7 +323,7 @@ public class ComponentController {
 		}
 		return ResponseEntity.ok()
 				.contentType(MediaType.parseMediaType(uploadedComponent.getComponentFileType()))
-				.header(HttpHeaders.CONTENT_DISPOSITION, "attachments; filename = "+uploadedComponent.getComponentName())
+				.header(HttpHeaders.CONTENT_DISPOSITION, "attachments; filename="+uploadedComponent.getComponentName())
 				.body(new ByteArrayResource(uploadedComponent.getComponentFile()));
 	}
 	
@@ -344,8 +340,12 @@ public class ComponentController {
 	@GetMapping(value = "/static/component/{componentId}")
 	public UploadedComponent getComponentById(@PathVariable String componentId) {
 		UploadedComponent uploadedComponent = uploadedComponentService.downloadComponentById(componentId);
-		uploadedComponent.setImgUrl(getImageUrl(componentId));
-		uploadedComponent.setDownloadUri(getDownloadUri(componentId));
+	
+		if(uploadedComponent != null) {
+			uploadedComponent.setImgUrl(getImageUrl(componentId));
+			uploadedComponent.setDownloadUri(getDownloadUri(componentId));
+		}
+		
 		return uploadedComponent;
 	}
 }

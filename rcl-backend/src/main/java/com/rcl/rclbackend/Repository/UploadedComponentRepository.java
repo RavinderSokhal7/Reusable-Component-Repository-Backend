@@ -160,8 +160,8 @@ public interface UploadedComponentRepository extends JpaRepository<UploadedCompo
 			@Param("componentId") String componentId);
 	
 	@Query("SELECT t from UploadedComponent t WHERE "
-			+ "(t.isPublic = true "
-			+ "and t.componentId = :componentId)" )
+//			+ "(t.isPublic = true and"
+			+ "( t.componentId = :componentId)" )
 	public UploadedComponent downloadComponentById(@Param("componentId") String componentId);
 	
 	@Query("SELECT t from UploadedComponent t WHERE "
