@@ -87,8 +87,10 @@ public class ComponentController {
 			) {
 		componentVersion = rectifyVersion(componentVersion);
 		UploadComponentResponse response = new UploadComponentResponse();
-		UploadedComponentDTO compDto = new UploadedComponentDTO(previewImg, previewFile, componentFile, auth.getName(), componentName, domain, techType, function, description, componentOs, componentVersion,
-				componentFile.getContentType(), previewImg.getContentType(), previewFile.getContentType(), "", "", componentInput, componentOutput);
+		UploadedComponentDTO compDto = new UploadedComponentDTO(previewImg, previewFile, componentFile, auth.getName(),
+				componentName, domain, techType, function, description, componentOs, componentVersion,
+				componentFile.getContentType(), previewImg.getContentType(), previewFile.getContentType(),
+				"", "", componentInput, componentOutput);
 		UploadedComponent comp = uploadedComponentService.uploadPrivatelyByUser(compDto);
 		if(comp == null) {
 			response.setMessage("Component already exits!");

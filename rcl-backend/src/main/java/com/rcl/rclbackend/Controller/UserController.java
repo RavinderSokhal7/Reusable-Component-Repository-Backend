@@ -28,6 +28,7 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import com.rcl.rclbackend.Model.AuthenticationRequest;
 import com.rcl.rclbackend.Model.AuthenticationResponse;
+import com.rcl.rclbackend.Model.RoleNames;
 import com.rcl.rclbackend.Model.UploadedComponent;
 import com.rcl.rclbackend.Model.User;
 import com.rcl.rclbackend.Reponse.UserResponse;
@@ -64,7 +65,6 @@ public class UserController {
 			);
 		}
 		catch (BadCredentialsException e) {
-//			throw new Exception("Incorrect username or password", e);\
 			return ResponseEntity.badRequest().build();
 		}
 
@@ -92,6 +92,7 @@ public class UserController {
 	@PostMapping(value = "/register/user")
 	public UserResponse addUser(@RequestBody User user) {
 		UserResponse response = new UserResponse();
+		user.setRoleName(RoleNames.USER.name());
 		Optional<User> op = userService.findUserByUserName(user.getUserName());
 		if(op.isPresent()) {
 			response.setMessage("user with username : " + user.getUserName() + " Already Exits!");

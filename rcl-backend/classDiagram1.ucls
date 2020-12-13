@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="com.rcl.rclbackend.ServiceImpl.UploadedComponentServiceImpl" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/ServiceImpl/UploadedComponentServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="304" width="604" x="4786" y="1263"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.rcl.rclbackend.Constants.AppConstants" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/Constants/AppConstants.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="124" width="173" x="4252" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.rcl.rclbackend.DTO.FacetSearchDTO" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/DTO/FacetSearchDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="646" width="510" x="2674" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.rcl.rclbackend.ServiceImpl.UserServiceImpl" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/ServiceImpl/UserServiceImpl.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="268" width="287" x="3951" y="1263"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.rcl.rclbackend.util.JwtUtil" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/util/JwtUtil.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="250" width="297" x="3617" y="1841"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.rcl.rclbackend.ServiceImpl.MyUserDetailsService" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/ServiceImpl/MyUserDetailsService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="156" width="282" x="3954" y="1841"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.rcl.rclbackend.DTO.UserDTO" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/DTO/UserDTO.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="268" width="197" x="1722" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.rcl.rclbackend.Model.UploadedComponent" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/Model/UploadedComponent.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="1186" width="911" x="5501" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="com.rcl.rclbackend.DTO.UploadedComponentDTO" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/DTO/UploadedComponentDTO.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="1096" width="971" x="442" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <enumeration id="10" language="java" name="com.rcl.rclbackend.Model.RoleNames" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/Model/RoleNames.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="149" x="2485" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </enumeration>  
+  <class id="11" language="java" name="com.rcl.rclbackend.Exception.MultipartFileUploadException" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/Exception/MultipartFileUploadException.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="106" width="676" x="3536" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="12" language="java" name="com.rcl.rclbackend.filters.JwtRequestFilter" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/filters/JwtRequestFilter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="106" width="447" x="4278" y="1263"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="13" language="java" name="com.rcl.rclbackend.Controller.UserController" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/Controller/UserController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="196" width="437" x="3474" y="1263"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="14" language="java" name="com.rcl.rclbackend.Controller.ComponentController" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/Controller/ComponentController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="358" width="982" x="5430" y="1263"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="15" language="java" name="com.rcl.rclbackend.Service.UserService" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/Service/UserService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="232" width="287" x="3577" y="2167"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="16" language="java" name="com.rcl.rclbackend.Reponse.UploadComponentResponse" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/Reponse/UploadComponentResponse.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="322" width="357" x="45" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="17" language="java" name="com.rcl.rclbackend.Repository.UserRepository" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/Repository/UserRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="196" width="359" x="4276" y="1841"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="18" language="java" name="com.rcl.rclbackend.Model.AuthenticationResponse" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/Model/AuthenticationResponse.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="142" width="209" x="1959" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="19" language="java" name="com.rcl.rclbackend.Service.UploadedComponentService" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/Service/UploadedComponentService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="286" width="604" x="5526" y="1841"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="20" language="java" name="com.rcl.rclbackend.Model.User" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/Model/User.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="538" width="334" x="6452" y="1263"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="com.rcl.rclbackend.Exception.GenericControllerAdvice" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/Exception/GenericControllerAdvice.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="106" width="241" x="4465" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="com.rcl.rclbackend.Reponse.UserResponse" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/Reponse/UserResponse.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="322" width="272" x="3224" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="23" language="java" name="com.rcl.rclbackend.Repository.UploadedComponentRepository" 
+    project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/Repository/UploadedComponentRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="286" width="811" x="4675" y="1841"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="24" language="java" name="com.rcl.rclbackend.Model.AuthenticationRequest" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/Model/AuthenticationRequest.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="232" width="237" x="2208" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="com.rcl.rclbackend.RclBackendApplication" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/RclBackendApplication.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="229" x="1453" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="com.rcl.rclbackend.Model.UserAdapter" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/Model/UserAdapter.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="268" width="350" x="6452" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="com.rcl.rclbackend.Configuration.SecurityConfiguration" project="rcl-backend" 
+    file="/rcl-backend/src/main/java/com/rcl/rclbackend/Configuration/SecurityConfiguration.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="214" width="550" x="4746" y="37"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="28">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="29" name="userRepository"/>      
+      <multiplicity id="30" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="31">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="32" name="userDetailsService">        
+        <position height="20" width="115" x="4052" y="1860"/>      
+      </attribute>      
+      <multiplicity id="33" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="34">    
+    <bendpoint x="3534" y="1841"/>    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="35" name="userService"/>      
+      <multiplicity id="36" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="37">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="38" name="userDetailsService"/>      
+      <multiplicity id="39" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="40">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="41" name="userRepo"/>      
+      <multiplicity id="42" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="17" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="43">    
+    <bendpoint x="3586" y="1841"/>    
+    <end type="SOURCE" refId="4"/>    
+    <end type="TARGET" refId="15"/>  
+  </realization>  
+  <association id="44">    
+    <end type="SOURCE" refId="1" navigable="false">      
+      <attribute id="45" name="uploadedComponentRepo"/>      
+      <multiplicity id="46" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="23" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="47">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="48" name="user"/>      
+      <multiplicity id="49" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="50">    
+    <bendpoint x="4755" y="1263"/>    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="51" name="userDetailsService"/>      
+      <multiplicity id="52" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="53">    
+    <end type="SOURCE" refId="12" navigable="false">      
+      <attribute id="54" name="jwtUtil"/>      
+      <multiplicity id="55" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="56">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="57" name="uploadedComponentService"/>      
+      <multiplicity id="58" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="59">    
+    <end type="SOURCE" refId="1"/>    
+    <end type="TARGET" refId="19"/>  
+  </realization>  
+  <association id="60">    
+    <end type="SOURCE" refId="13" navigable="false">      
+      <attribute id="61" name="jwtTokenUtil"/>      
+      <multiplicity id="62" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="5" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="63">    
+    <end type="SOURCE" refId="8" navigable="false">      
+      <attribute id="64" name="user"/>      
+      <multiplicity id="65" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="20" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="66">    
+    <end type="SOURCE" refId="27" navigable="false">      
+      <attribute id="67" name="jwtRequestFilter"/>      
+      <multiplicity id="68" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="69">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="70" name="userService"/>      
+      <multiplicity id="71" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="72">    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="73" name="uploadedComponentService"/>      
+      <multiplicity id="74" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="19" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>
