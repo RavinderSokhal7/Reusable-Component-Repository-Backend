@@ -26,6 +26,8 @@ Method : post with new user details
 
 Method : post with username and password in body
 
+![Authenticate User](/Api/authenticate.JPG?raw=true "Authenticate User")
+
 • Upload Component:
 
 public: /api/rcl/upload/component/public
@@ -33,10 +35,14 @@ public: /api/rcl/upload/component/public
 Method : post , with component details in form data, requires
 valid JWT in header
 
+![Upload Component Publicly](/Api/uploadPublic.JPG?raw=true "Upload Component Publicly")
+
 private: /api/rcl/upload/component/private
 
 Method : post with component details in form data, requires
 valid JWT in header
+
+![Upload Component Privately](/Api/uploadPrivate.JPG?raw=true "Upload Component Privately")
 
 • Get All Components : /api/rcl/download/component/pub-
 lic/all
@@ -48,10 +54,14 @@ public: /api/rcl/download/component/public
 Method : get, requires a valid JWT responds with all public
 components posted by this User
 
+![Get Public Component](/Api/getpub.JPG?raw=true "Get Public Components")
+
 private: /api/rcl/downpload/component/private
 
 Method : get, requires valid JWT in header responds with all
 public components posted by this User
+
+![Get Private Components](/Api/getprivate.JPG?raw=true "Get Private Components")
 
 • Search Apis :
 
@@ -63,10 +73,14 @@ facet
 Method : get method, with details of component to be searched
 with facets in form data
 
+![Search Public Component by Facets](/Api/getPubFac.JPG?raw=true "Search Public Component by Facets")
+
 Private by user : /api/rcl/download/component/private/facet
 
 Method : get method, with details of component to be searched
 with facets in form data
+
+![Search Private Component by Facets](/Api/getPriFac.JPG?raw=true "Search Private Component by Facets")
 
 • Attribute Search :
 
@@ -76,8 +90,12 @@ tribute
 Method : get method, with details of component to be searched
 with attributes in form data
 
+![Get Public Component by Attributes](/Api/getPubAtt.JPG?raw=true "Get Public Component by Attributes")
+
 Private By User : /api/rcl/download/component/private/at-
 tribute
 
 Method : get method, with details of component to be searched
 with attributes in form data, requires valid JWT in header
+
+![Get Private Component by Attributes](/Api/getPriAtt.JPG?raw=true "Get Private Component by Attributes")
