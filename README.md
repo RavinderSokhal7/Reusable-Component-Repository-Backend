@@ -84,16 +84,14 @@ with facets in form data
 
 • Attribute Search :
 
-Public Component : /api/rcl/download/component/public/at-
-tribute
+Public Component : /api/rcl/download/component/public/attribute
 
 Method : get method, with details of component to be searched
 with attributes in form data
 
 ![Get Public Component by Attributes](/Api/getPubAtt.JPG?raw=true "Get Public Component by Attributes")
 
-Private By User : /api/rcl/download/component/private/at-
-tribute
+Private By User : /api/rcl/download/component/private/attribute
 
 Method : get method, with details of component to be searched
 with attributes in form data, requires valid JWT in header
