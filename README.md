@@ -13,7 +13,9 @@ Tech : Spring Boot, GCP, Spring Security
 The backend exposes a restful api for managing the cloud repository.
 The backend api is protected with authentication by token using spring security and JWT.
 The backend api's main resource are components which can be fetched using a get api and posted to database using post api.
+
 The Api provided is listed below :
+
 • Add User: /register/adduser
 Method : post with new user details
 
