@@ -20,7 +20,7 @@ The Api provided is listed below :
 
 Method : post with new user details
 
-![Add User](/Api/registerUser.jpg?raw=true "Login")
+![Add User](/Api/registerUser.JPG?raw=true "Add User")
 
 • Authenticate User: /authenticate
 
