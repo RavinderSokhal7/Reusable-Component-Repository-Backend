@@ -17,46 +17,66 @@ The backend api's main resource are components which can be fetched using a get 
 The Api provided is listed below :
 
 • Add User: /register/adduser
+
 Method : post with new user details
 
 • Authenticate User: /authenticate
+
 Method : post with username and password in body
 
 • Upload Component:
+
 public: /api/rcl/upload/component/public
+
 Method : post , with component details in form data, requires
 valid JWT in header
+
 private: /api/rcl/upload/component/private
+
 Method : post with component details in form data, requires
 valid JWT in header
 
 • Get All Components : /api/rcl/download/component/pub-
 lic/all
+
 Method : get
+
 public: /api/rcl/download/component/public
+
 Method : get, requires a valid JWT responds with all public
 components posted by this User
+
 private: /api/rcl/downpload/component/private
+
 Method : get, requires valid JWT in header responds with all
 public components posted by this User
 
 • Search Apis :
+
 Facet Search and Attribute integrated search :
+
 Public Component : /api/rcl/download/component/public/-
 facet
+
 Method : get method, with details of component to be searched
 with facets in form data
+
 Private by user : /api/rcl/download/component/private/facet
+
 Method : get method, with details of component to be searched
 with facets in form data
 
 • Attribute Search :
+
 Public Component : /api/rcl/download/component/public/at-
 tribute
+
 Method : get method, with details of component to be searched
 with attributes in form data
+
 Private By User : /api/rcl/download/component/private/at-
 tribute
+
 Method : get method, with details of component to be searched
 with attributes in form data, requires valid JWT in header
 
