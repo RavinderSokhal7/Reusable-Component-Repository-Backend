@@ -20,6 +20,8 @@ The Api provided is listed below :
 
 Method : post with new user details
 
+![Add User](/Api/registerUser.jpg?raw=true "Login")
+
 • Authenticate User: /authenticate
 
 Method : post with username and password in body
@@ -79,7 +81,3 @@ tribute
 
 Method : get method, with details of component to be searched
 with attributes in form data, requires valid JWT in header
-
-
-![Login](/screenshots/0.JPG?raw=true "Login")
-
